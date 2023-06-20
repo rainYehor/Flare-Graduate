@@ -48,13 +48,15 @@
                 
                 <div class="final-price">
                     <h2 class="price">Загальна ціна: <span class="total-price">{{ full_price }}</span>грн</h2>
-                    <a href="~"><input class="go-to-order" type="submit" name="order" value="Перейти до Оформлення"></a>
+                    <input class="go-to-order" type="submit" name="order" value="Перейти до Оформлення">
                 </div>
             </div>
             <div class="modal-overlay">
                 <div class="modal">
                     <form id="order" method="post">
+                        <input type="hidden" id="success_order" value="{% url 'cart' %}">
                         {% csrf_token %}
+                        <!-- <h3 class="times-sign">&times;</h3> -->
                         <div class="input-lines">
                             <p>Ваше замовлення:</p>
                             <p>Ім'я: {{user.first_name}}</p>

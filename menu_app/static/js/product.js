@@ -1,13 +1,25 @@
 let buttonPlus = document.querySelector('.button-plus')
 let buttonMinus = document.querySelector('.button-minus')
-console.log(buttonMinus)
 let counterPrice = document.getElementById('count')
+let ratingInput = document.querySelector('.input-rating')
+console.log(ratingInput)
+
+ratingInput.addEventListener('input', function(event) {
+    let inputValue = event.target.value;
+    let filteredValue = inputValue.replace(/[^1-5]/g, '');
+    if (filteredValue !== inputValue)  {
+        event.target.value = filteredValue;
+    }
+})
 
 function counterPlus() {
-    counterPrice.removeAttribute('readonly');
-    counterPrice.value ++;
-    console.log(counterPrice.value)
-    counterPrice.setAttribute('readonly', 'readonly')
+    if (counterPrice.value < 10) {
+        counterPrice.removeAttribute('readonly');
+        counterPrice.value ++;
+        console.log(counterPrice.value)
+        counterPrice.setAttribute('readonly', 'readonly') 
+    }
+    
 }
 
 function counterMinus() {

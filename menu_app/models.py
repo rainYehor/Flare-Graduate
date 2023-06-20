@@ -7,7 +7,6 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     image = models.ImageField(upload_to='images/%Y')
-    
 
 class Comment(models.Model):
     username = models.CharField(max_length=30)

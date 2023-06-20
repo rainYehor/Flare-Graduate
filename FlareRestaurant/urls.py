@@ -34,7 +34,6 @@ urlpatterns = [
     path('contacts/', show_contact, name='contacts'),
 
     path('cart/', show_cart, name='cart'),
-    path('order/', order_processing, name='order_processing'),
     path('delete_from_cart/', delete_from_cart, name='delete_from_cart'),
 
     path('login/', show_login_form, name='login'),

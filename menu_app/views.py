@@ -2,8 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from cart_app.models import *
 from user_app.models import *
-from FlareRestaurant.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
-from cart_app.telegram import send_message_tg
 
 
 
@@ -35,8 +33,6 @@ def show_product(request, product_pk):
                 rating = request.POST.get('rating')
                 review = request.POST.get('review')
                 Comment.objects.create(username=username, review=review, rating=rating, product_id=product_pk)
-                message = 'test'
-                send_message_tg(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
             except:
                 pass
         else:

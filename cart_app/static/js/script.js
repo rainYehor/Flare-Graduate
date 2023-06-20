@@ -13,16 +13,39 @@ $(document).ready(function () {
             type: "POST",
             url: $('#url_delete_from_cart').val(),
             data: data,
-            success: function(){
+            success: function(response){
                 form.remove()
                 receiptProduct.remove()
-                // totalPrice = 0
-                // $('.total-price').html(totalPrice)
+                $('.total-price').html(response.full_price)
             }
         })
     })
+    $('#order').on('click', function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: $('#success_order').val(),
+            data: {csrfmiddlewaretoken:$('input[name="csrfmiddlewaretoken"]').val()},
+            success: function() {
+                $('.product_in_cart').remove();
+                $('.receipt-text').remove();
+                $('.total-price').html('0')
+                $('.modal-overlay').css('display', 'none');
+            }
+        })
+        
+    })
 })
 
+
+
+$('.go-to-order').on('click', function() {
+    $('.modal-overlay').css('display', 'flex');
+})
+
+$('.times-sign').on('click', function() {
+    $('.modal-overlay').css('display', 'none');
+})
 // function updateFinalPrice() {
 //     let total
 // }
