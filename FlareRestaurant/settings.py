@@ -135,3 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TELEGRAM_BOT_TOKEN = '6176361926:AAGLuN18PYJ7tadPiSIZYS-_HRT6GwGk-cw'
+
+TELEGRAM_CHAT_ID = -987070536

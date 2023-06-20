@@ -1,13 +1,13 @@
 {% extends 'base/base.html' %}
 {% load static %}
-{% block style %}{% endblock %}
+{% block style %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
 {% block title %}Профіль{% endblock %}
 
 
 {% block content %}
    <div class="content">
       <h1>{{user.first_name}}</h1>
-      <div class="blocks">
+      <!-- <div class="blocks">
          <a href="{% url 'love_product' %}"><div class="love-product">
             <h1>Love product</h1>
          </div></a>
@@ -17,7 +17,7 @@
          <a href="{% url 'all_cards' %}"><div class="all-cards">
             <h1>All cards</h1>
          </div></a>
-      </div>
+      </div> -->
    </div>
       
    

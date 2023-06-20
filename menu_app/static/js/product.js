@@ -19,6 +19,22 @@ function counterMinus() {
     }
 }
 
-
 buttonPlus.addEventListener('click', counterPlus)
 buttonMinus.addEventListener('click', counterMinus)
+
+$(document).ready(function () {
+    $('#add-to-cart').submit(function(e) {
+        e.preventDefault();
+        let data = $(this).serializeArray()
+        let form = $(this)
+        console.log(data)
+        $.ajax({
+            type: 'POST',
+            url: $('.product').val(),
+            data: data,
+            success: function() {
+
+            }
+        })
+    })
+})
