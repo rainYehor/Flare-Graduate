@@ -9,33 +9,47 @@
     background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../../media/images/2023/backgr1.png);
 }
 
-.first-part {
-}
-
 .second-part, .third-part, .fourth-part, .fifth-part, .sixth-part {
     padding: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
+    height: 120%;
 }
 
 .second-part {
+    display: flex;
+    justify-content: center;
+    text-align: center;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../../media/images/2023/backgr2.png);
+    background-size: cover;
 }
 
 .third-part {
     background: url(../../../media/images/2023/backgr3.jpg);
+    background-size: cover;
+    padding: 0px 30px 50px;
 }
 
 .fourth-part {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url(../../../media/images/2023/backgr4.png);
+    padding: 15px 40px; 
+    background-size: cover;
 }
 
 .fifth-part {
+    display: flex;
+    flex-direction: row;
+    padding: 150px 40px;
     background: url(../../../media/images/2023/backgr5.png);
+    background-size: cover;
 }
 
 .sixth-part {
     background: url(../../../media/images/2023/backgr6.png);
+    background-size: cover;
 }
 
 .text-block{
@@ -43,11 +57,79 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    width: 75%;
+    padding: 20px 0px;
+    width: 68%;
+    height: fit-content;
     background: rgba(0, 0, 0, 0.5);
 }
 
+.text-block_4{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 10px;
+    width: 68%;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+.text-block_1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+    padding: 20px 17px;
+    width: 50%;
+    height: fit-content;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.text-block_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    padding: 20px 17px;
+    width: 60%;
+    height: 50%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.text-block_3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    padding: 20px 17px;
+    width: 60%;
+    height: 70%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay_1, .overlay_2 {
+    position: absolute;
+    background: url(../../../media/images/2023/star-overlay.png);
+    background-size: cover;
+    mix-blend-mode: screen;
+    width: 324px;
+    height: 297px;
+}
+
+.overlay_1 {
+    left: 900px;
+    top: 2770px;
+}
+
+.overlay_2{
+    left: 1192px;
+    top: 3080px;
+}
 
 /* .text-block{
     display: flex;
@@ -134,7 +216,7 @@
     color: #000000;
 }
 
-.link-block-1 {
+.link-block {
     display: flex;
     flex-direction: column;
     gap: 50px;

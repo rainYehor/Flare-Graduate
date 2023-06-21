@@ -55,6 +55,9 @@
     gap: 45px;
 }
 
+.network {
+    color: white;
+}
 
 a {
     text-decoration: none;

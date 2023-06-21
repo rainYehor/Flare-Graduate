@@ -8,24 +8,28 @@
         <div class="align-center-v first-part">
             <h1>FlareRestaurant</h1>
         </div>
-        <div class=" second-part">
+        <div class="align-center-v second-part">
             <div class="text-block">
                 <p class="main-text">Ресторан, що пропонує неперевершений досвід у світі кулінарії та гостинності. Ресторан, що привертає увагу своїм стильним та сучасним інтер'єром, створюючи атмосферу затишку та комфорту.</p>
             </div>
         </div>
-        <div class="third-part">
-            <div class="text-block">
+        <div class="align-bottom-right-v third-part">
+            <div class="text-block_1">
                 <p class="main-text">Наша кухня - справжнє мистецтво. Наші талановиті шеф-кухарі використовують найсвіжіші інгредієнти, щоб створити неперевершені смакові поєднання та вражаючі страви. </p>
             </div>
         </div>
-        <div class="fourth-part">
-            <div class="text-block">
+        <div class="align-bottom-left-h fourth-part">
+            <div class="text-block_2">
                 <p class="main-text">Наше меню багате та різноманітне. Ви знайдете тут страви різних кухонь світу.</p>
             </div>
             <div class="link-block">
                 <div class="top-dish">
                     <span class="try">Скуштуйте:</span>
                     <div class="product">
+                        <div class="overlay_1">
+                        </div>
+                        <div class="overlay_2"> 
+                        </div>
                         {% for product in all_products|slice:"1:2" %}
                             <img class="prod-image" src="{{product.image.url}}" alt="wtf, bro">
                             <p class="prod-name">{{product.name}}</p>
@@ -40,12 +44,12 @@
             </div>
         </div>
         <div class="fifth-part">
-            <div class="text-block">
+            <div class="text-block_3">
                 <p class="main-text">Наша команда професіоналів у нашому ресторані присвячена наданню найвищої якості обслуговування.</p>
             </div>
         </div>
-        <div class="sixth-part">
-            <div class="text-block">
+        <div class="align-center-v sixth-part">
+            <div class="text-block_4">
                 <p class="main-text">Ми прагнемо досягти найвищих стандартів якості та задоволення наших гостей.</p>
             </div>        
         </div>
