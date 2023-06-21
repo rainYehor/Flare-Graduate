@@ -13,8 +13,8 @@
     position: relative;
     width: 100%;
     height: auto;
-    background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../../media/images/2023/image_2023-06-14_18-07-13_rORXX4h.png);
-    background-position: fixed;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../../media/images/2023/cart-backgr.png);
+    background-size: cover;
 }
 
 .workspace {
@@ -116,7 +116,7 @@
 }
 
 .modal-overlay {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

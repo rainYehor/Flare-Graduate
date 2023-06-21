@@ -3,7 +3,6 @@ from .models import *
 from user_app.models import Account, CartItem
 from django.http import JsonResponse
 from .utils import total_price
-from FlareRestaurant.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
 from .telegram import send_message_tg
 
 # Create your views here.
@@ -24,12 +23,11 @@ def show_cart(request):
         else:
             user_order += ')'
     
+    chatid = -987070536
     message = f"Новий заказ!\nІм'я: {account.name}.\nЗаказ: {user_order}.\nЗагальна ціна: {full_price}грн"
     print(message)
     if request.method == 'POST':
-
-
-        send_message_tg(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
+        send_message_tg(chatid, message)
         CartItem.objects.all().delete()
     return render(request, 'cart.html', context)
 

@@ -1,5 +1,5 @@
-import telepot
+import telebot
 
-def send_message_tg(bot_token, chatid, message):
-    bot = telepot.Bot(bot_token)
-    bot.sendMessage(chatid, message)
+bot = telebot.TeleBot("6176361926:AAGLuN18PYJ7tadPiSIZYS-_HRT6GwGk-cw")
+def send_message_tg(chat_id, message_text):
+    bot.send_message(chat_id, message_text)
