@@ -16,12 +16,13 @@
    
   /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 133, 98, 0.5);
+    opacity: 0.5;
 }
   
   /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0,0,0.9)
+    background: rgba(0, 133, 98, 0.9);
 }
 
 

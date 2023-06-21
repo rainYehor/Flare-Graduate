@@ -26,10 +26,6 @@
                 <div class="top-dish">
                     <span class="try">Скуштуйте:</span>
                     <div class="product">
-                        <div class="overlay_1">
-                        </div>
-                        <div class="overlay_2"> 
-                        </div>
                         {% for product in all_products|slice:"1:2" %}
                             <img class="prod-image" src="{{product.image.url}}" alt="wtf, bro">
                             <p class="prod-name">{{product.name}}</p>
@@ -38,7 +34,7 @@
                 </div>
                 <a href="{% url 'menu' %}">
                     <div class="menu-link">
-                        <p class="text-link1">Menu</p>
+                        <p class="text-link1">Меню</p>
                     </div>
                 </a>
             </div>
@@ -47,6 +43,11 @@
             <div class="text-block_3">
                 <p class="main-text">Наша команда професіоналів у нашому ресторані присвячена наданню найвищої якості обслуговування.</p>
             </div>
+            <a href="{% url 'contacts' %}">
+                <div class="menu-link_1">
+                    <p class="text-link1">Контакти</p>
+                </div>
+            </a>
         </div>
         <div class="align-center-v sixth-part">
             <div class="text-block_4">

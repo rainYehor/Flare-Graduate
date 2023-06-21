@@ -27,7 +27,7 @@
                         </div>
                         <div class="price-cart">
                             <div class="left-part-price">
-                                <h2>{{ product.price }} грн/шт.</h2>
+                                <h2>{{ product.price }} грн/шт</h2>
                                 <input type="button" class="button-minus" value="-">
                                 <input class="counter" type="number" id="count" name="count" value="1" readonly>
                                 <input type="button" class="button-plus" value="+">
@@ -56,7 +56,7 @@
                     <div class="comments-part">
                         <h2 class="comments-title">Коментарі</h2>
                         <div class="add_comment">
-                            <form method="post">
+                            <form id="add_comment" method="post">
                                 {% csrf_token %}
                                 <div class="rows">
                                     <div class="row-1">

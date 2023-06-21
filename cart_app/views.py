@@ -24,7 +24,7 @@ def show_cart(request):
         else:
             user_order += ')'
     
-    message = f"Новий заказ!\nІм'я:{account.name}.\nЗаказ:{user_order}.\nЗагальна ціна:{full_price}грн"
+    message = f"Новий заказ!\nІм'я: {account.name}.\nЗаказ: {user_order}.\nЗагальна ціна: {full_price}грн"
     print(message)
     if request.method == 'POST':
 
