@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <script src="{% static 'js/cart.js' %}" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
                 <p>Ім'я: <b>{{user.first_name}}</b></p>
             {% endif %}
             <p>Замовлення:</p>
-            {% for final_order in products_in_cart %}
+            {% for final_order in cartItems %}
             <p><b>{{final_order.product.name}}</b> у кількості: <b>{{final_order.count}}</b></p>
             {% endfor %}
             <p>Загаьна ціна: <b>{{full_price}}грн</b></p>

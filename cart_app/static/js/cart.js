@@ -40,6 +40,12 @@ $(document).ready(function () {
 
 
 $('.go-to-order').on('click', function() {
+    $.get($("#cart_url").val(), function (data) {
+        // Выбор контейнера на другой странице, куда будет отображено содержимое
+        let container = $(".modal");
+        // Вставка полученного HTML-содержимого в контейнер
+        container.html(data);
+      });
     $('.modal-overlay').css('display', 'flex');
 })
 

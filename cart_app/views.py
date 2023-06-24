@@ -89,9 +89,18 @@ def delete_from_cart(request):
     return JsonResponse({'full_price': full_price})
 
 def get_receipt(request):
-    if request.method == 'POST':
-        if request.user.is_authenticated:
-            account = Account.objects.get(user = request.user)
-            cartItems = CartItem.objects.filter(account = account)
-            
-    return JsonResponse({'receipt':CartItem.objects.filter(account = account)})
+    context = {}
+    if request.user.is_authenticated:
+        account = Account.objects.get(user = request.user)
+        cartItems = CartItem.objects.filter(account = account)
+        context['cartItems'] = cartItems
+        full_price = total_price(cartItems)
+        context['full_price'] = full_price
+    else:
+        session_key = request.session.session_key
+        cartItems = ProductInCart.objects.filter(session_key = session_key)
+        context['cartItems'] = cartItems
+        full_price = total_price(cartItems)
+        context['full_price'] = full_price
+
+    return render(request, 'order.html', context)
