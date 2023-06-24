@@ -20,12 +20,12 @@ $(document).ready(function () {
             }
         })
     })
-    $('#order').on('click', function(e) {
+    $('.submit-order').click(function(e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
             url: $('#success_order').val(),
-            data: {csrfmiddlewaretoken:$('input[name="csrfmiddlewaretoken"]').val()},
+            data: $(this).parent().serializeArray(),
             success: function() {
                 $('.product_in_cart').remove();
                 $('.receipt-text').remove();

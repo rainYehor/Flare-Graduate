@@ -55,7 +55,7 @@ def show_login_form(request):
                 login(request, user)
                 return redirect('main')
             else:
-                context['error'] = "Номер телефону або пароль невірні"
+                context['error'] = "Електронна пошта або пароль невірні"
         except:
             context['error'] = "Такого аккаунту не існує"   
 

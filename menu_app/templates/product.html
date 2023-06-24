@@ -11,7 +11,7 @@
 {% block content %}
     <div class="content" style="background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url({{product.image.url}});">
         <div class="workspace">
-            <div class="align-center-h img-info">
+            <div class="align-left-h img-info">
                 <form class="top-product align-center-h" id="add-to-cart" method="post">
                     {% csrf_token %}
                     <input class="product" type="text" name="product" value="{{ product.pk }}" hidden>
@@ -20,6 +20,7 @@
                     </div>
                     <div class="align-top-center-v info">
                         <div class="prod-name">
+                            <h2>{{ success }}</h2>
                             <h2>{{ product.name }}</h2>
                         </div>
                         <div class="ingredients">

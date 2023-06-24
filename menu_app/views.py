@@ -36,7 +36,30 @@ def show_product(request, product_pk):
             except:
                 pass
         else:
-            return redirect('login')
+            session_key = request.session.session_key
+            if not session_key:
+                request.session.cycle_key()
+                session_key = request.session.session_key
+            print(session_key)
+            product = Product.objects.get(pk=product_pk)
+            count = int(request.POST.get('count', 1))
+            cart_item, created = ProductInCart.objects.get_or_create(
+                product=product,
+                session_key=session_key,
+                defaults={'count': count}
+            )
+            print(count)
+            if not created:
+                cart_item.count = count
+                cart_item.save()
+
+            try:
+                username = request.POST.get('username')
+                rating = request.POST.get('rating')
+                review = request.POST.get('review')
+                Comment.objects.create(username=username, review=review, rating=rating, product_id=product_pk)
+            except:
+                pass
         
     product = get_object_or_404(Product, pk=product_pk)
     comments = Comment.objects.filter(product_id=product_pk)

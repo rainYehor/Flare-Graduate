@@ -30,7 +30,7 @@
 .header{
     display: flex;
     justify-content: space-between;
-    background: rgba(239, 239, 239, 0.9);
+    background: rgba(239, 239, 239, 0.99);
     padding: 0px 20px;
     position: fixed;
     width: 100%;
@@ -78,6 +78,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     background: black;
+    z-index: 13;
 }
 
 .left-part {

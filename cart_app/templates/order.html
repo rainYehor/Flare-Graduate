@@ -1,22 +1,30 @@
-{% extends 'base/base.html' %}
 {% load static %}
-{% block style %} <link rel="stylesheet" href="{% static 'css/order.css' %}"> {% endblock %}
-{% block title %}Оформлення заказу{% endblock %}
-
-
-{% block content %}
-    <div class="content-order">
-        <div class="left-receipt">
-            <h1>Оформлення заказу</h1>
-            {% for text_receipt in products_in_cart %}
-                <div class="solo-product">
-                    <p>{{text_receipt.product.name}} <b>x{{text_receipt.count}}</b></p>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="times-sign">&times;</h1>
+    <form id="order" method="post">
+        <input type="hidden" id="success_order" value="{% url 'cart' %}">
+        {% csrf_token %}
+        <!-- <h3 class="times-sign">&times;</h3> -->
+        <div class="input-lines">
+            <p>Ваше замовлення:</p>
+            {% if user.is_authenticated %}
+                <p>Ім'я: <b>{{user.first_name}}</b></p>
+            {% endif %}
+            <p>Замовлення:</p>
+            {% for final_order in products_in_cart %}
+            <p><b>{{final_order.product.name}}</b> у кількості: <b>{{final_order.count}}</b></p>
             {% endfor %}
+            <p>Загаьна ціна: <b>{{full_price}}грн</b></p>
         </div>
-        <div class="final-price">
-            <h2 class="price">Загальна ціна: <span class="total-price">{{ full_price }}</span>грн</h2>
-            <a href="{% url 'order_processing' %}"><input class="go-to-order" type="submit" name="order" value="Перейти до Оформлення"></a>
-        </div>
-    </div>
-{% endblock %}
+        <button class="submit-order">Замовити!</button>
+    </form>
+    
+</body>
+</html>
