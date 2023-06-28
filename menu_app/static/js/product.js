@@ -2,7 +2,7 @@ let buttonPlus = document.querySelector('.button-plus')
 let buttonMinus = document.querySelector('.button-minus')
 let counterPrice = document.getElementById('count')
 let ratingInput = document.querySelector('.input-rating')
-console.log(ratingInput)
+console.log(counterPrice.value)
 
 ratingInput.addEventListener('input', function(event) {
     let inputValue = event.target.value;
@@ -42,10 +42,17 @@ $(document).ready(function () {
         console.log(data)
         $.ajax({
             type: 'POST',
-            url: $('.product').val(),
+            url: $('.product_pk').val(),
             data: data,
-            success: function() {
-
+            success: function(response) {
+                if (response.is_in_cart) {
+                    let cartCounter = $('.cart-counter');
+                    let newCartCounterValue = parseInt(cartCounter.text()) + 1;
+                    cartCounter.text(newCartCounterValue);
+                } else {
+                    let cartCounter = $('.cart-counter');
+                    cartCounter.text(newCartCounterValue);
+                }
             }
         })
     })

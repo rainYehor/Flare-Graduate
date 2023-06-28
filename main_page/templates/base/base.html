@@ -1,52 +1,57 @@
 {% load static %}
+{% load cart_tag %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     {% block js %} {% endblock %}
     {% block style %} {% endblock %}
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-    <header>
-        <div class="align-left-h header">
-
+    <header class="align-left-h">
+<!--  -->
             <a href="{% url 'main' %}">
-                <div class="align-left-h">
-                    <div class="icon">
-                        <img src="{% static 'img/logo.png' %}" alt="img not found", width="94" height="94px">
+                <div class="align-left-h header_logo">
+                    <div>
+                        <img class="icon" src="{% static 'img/logo.png' %}" alt="img not found", width="94" height="94px">
                     </div>
-                    <div class="name">
-                        Flare
-                    </div>
+
+                    <div class="name">Flare</div>
                 </div>
             </a>
-            
-            <div class="align-center-h header_nav_menu">
-                <a href="{% url 'menu' %}">Меню</a>
-                <a href="{% url 'contacts' %}">Контакти</a>
-                
-                {% if user.is_authenticated %}
-                    <a href="/logout">{{user.first_name}}</a>
-                {% else %}
-                    <a href="/login">Увійти</a>
-                {% endif %}
+            <!-- align-center-h -->
+            <div class="align-center-h header-menu">
+                <div class="header-menu-text">
+                    <!-- class="header_nav_menu" -->
+                    <div class="header-left-side">
+                        <a class="nav_button" href="{% url 'menu' %}">Меню</a>
+                        <a class="nav_button" href="{% url 'contacts' %}">Контакти</a>
+                    </div>
+                    
+                    {% if user.is_authenticated %}
+                        <a class="nav_button" href="/ask_logout">{{user.first_name}}</a>
+                    {% else %}
+                        <a class="nav_button" href="/login">Увійти</a>
+                    {% endif %}
 
-                <a href="/cart"><img src="{% static 'img/cart.png' %}" alt="img not found", height="66px"></a>
-                
+                    <!-- <a href="{% url 'cart' %}"><img src="{% static 'img/cart.png' %}" alt="img not found", height="66px"></a> -->
+                    <!-- <button><img src="{% static 'img/flag_ua.png' %}" alt="img not found", height="35px"></button> -->
+                </div>
+                <div class="cart-div">
+                    <a href="/cart"><img class="cart" src="{% static 'img/cart.png' %}" alt="img not found", height="66px"></a>
+                    <h2 class="cart-counter">{% get_cartitems_amount request %}</h2>
+                </div>
 
-                
-                <!-- <a href="{% url 'cart' %}"><img src="{% static 'img/cart.png' %}" alt="img not found", height="66px"></a> -->
-                <!-- <button><img src="{% static 'img/flag_ua.png' %}" alt="img not found", height="35px"></button> -->
             </div>
-
-        </div>
+            
     </header>
     <main>{% block content %} {% endblock %}</main>
-    <footer>
+    <footer id="footer">
         <div class="align-top-center-v left-part">
             <h2 class="align-center-h top-text">Зв'язатися з нами:</h2>
             <h2>+380960000000</h2>

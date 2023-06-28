@@ -1,22 +1,40 @@
-
-
+/* 
+body {
+    overflow: hidden;
+} */
 /* .content {
     background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../../../media/images/2023/backgr1.png);
     background-size: contain;
 } */
 
+html {scroll-behavior: smooth;}
+.up {transform: scaley(-1)}
+
+
+
+.arrrow-nav {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+
 .first-part, .second-part, .third-part, .fourth-part, .fifth-part, .sixth-part {
+    display: flex;
     padding: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
     height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .first-part {
     display: flex;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../../../media/images/2023/backgr1.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/backgr1.jpg);
     background-size: cover;
 }
 
@@ -24,37 +42,44 @@
     display: flex;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../../media/images/2023/backgr2.png);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/backgr2.jpg);
     background-size: cover;
 }
 
 .third-part {
-    background: url(../../../media/images/2023/backgr3.jpg);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    background: url(../img/backgr3.jpg);
     background-size: cover;
-    padding: 0px 30px 50px;
+    gap: 30px;
+    padding-top: 5%;
 }
 
 .fourth-part {
     display: flex;
     flex-direction: row;
     gap: 150px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url(../../../media/images/2023/backgr4.png);
-    padding: 15px 40px; 
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)), url(../img/backgr4.jpg);
+    padding-top: 10%; 
     background-size: cover;
 }
 
 .fifth-part {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    text-align: center;
     padding: 120px 40px;
-    background: url(../../../media/images/2023/backgr5.png);
+    gap: 20px;
+    background: url(../img/backgr5.jpg);
     background-size: cover;
-    gap: 120px;
-    /* justify-content: center; */
+    padding-top: 10%; 
 }
 
 .sixth-part {
-    background: url(../../../media/images/2023/backgr6.png);
+    background: url(../img/backgr6.jpg);
     background-size: cover;
 }
 
@@ -78,7 +103,7 @@
     padding: 100px 10px;
     width: 68%;
     height: fit-content;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -86,10 +111,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    text-align: end;
+    align-items: flex-end;
+    text-align: center;
     padding: 20px 17px;
-    width: 50%;
+    width: 60%;
     height: fit-content;
     background: rgba(0, 0, 0, 0.5);
 }
@@ -110,7 +135,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     text-align: start;
     padding: 20px 17px;
     width: 60%;
@@ -170,6 +194,7 @@
     max-width: 300px;
     height: auto;
 }
+
 
 .contact-name, .contact-post, .contact-number {
     font-style: normal;
@@ -278,6 +303,7 @@ h1 {
     height: 10%;
 }
 
+
 .numbers {
     display: flex;
     padding: 0px 40px;
@@ -290,6 +316,52 @@ h1 {
 
 .choose-block {
     cursor: pointer;
+}
+
+.arrrows-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: absolute;
+    top: 90%;
+}
+
+.all_contacts{    
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px 30px;
+    width: 100vw;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: scroll;
+    align-content: center;
+}
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+
+.contact-name, .contact-post {
+    font: 35px;
+}
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-style: normal;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 400;
+    color: white;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 500px) {

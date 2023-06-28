@@ -17,6 +17,9 @@ $(document).ready(function () {
                 form.remove()
                 receiptProduct.remove()
                 $('.total-price').html(response.full_price)
+                let cartCounter = $('.cart-counter');
+                let newCartCounterValue = parseInt(cartCounter.text()) - 1;
+                cartCounter.text(newCartCounterValue);
             }
         })
     })
@@ -31,6 +34,8 @@ $(document).ready(function () {
                 $('.receipt-text').remove();
                 $('.total-price').html('0')
                 $('.modal-overlay').css('display', 'none');
+                let cartCounter = $('.cart-counter');
+                cartCounter.text(0);
             }
         })
         

@@ -75,7 +75,19 @@ def show_profile(request):
         context = {'account': account}
     else:
         return redirect('main')
-    return render(request, 'profile.html', context)
+    return render(request, 'ask_logout.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # -------- Love Product --------
 def show_first_block(request):
