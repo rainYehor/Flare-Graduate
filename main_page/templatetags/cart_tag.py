@@ -11,5 +11,8 @@ def get_cartitems_amount(request):
         cart_item_count = CartItem.objects.filter(account = account).count()
     else:
         session_key = request.session.session_key
+        if not session_key:
+            request.session.cycle_key()
+            session_key = request.session.session_key
         cart_item_count = ProductInCart.objects.filter(session_key = session_key).count()
     return cart_item_count

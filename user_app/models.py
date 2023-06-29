@@ -11,7 +11,7 @@ class Account(models.Model):
     session_key = models.CharField(max_length=32)
     name = models.CharField(max_length=30)
     phone_number = PhoneNumberField(unique = True, null = False, blank = False)
-    country = models.CharField(max_length=30)
+    country = models.CharField(max_length=30, null = True, blank = True)
     adress = models.CharField(max_length=100)
     email = models.EmailField(max_length=254)
     password = models.CharField(max_length=35)

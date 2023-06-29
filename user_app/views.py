@@ -17,7 +17,7 @@ def show_reg_form(request):
         password_confirm = request.POST.get("password_confirm")
 
         try:
-            Account.objects.get(phone_number = phone_number)
+            User.objects.get(username = email)
             context['error'] = 'Цей користувач існує'
             return response
         except:
@@ -33,6 +33,7 @@ def show_reg_form(request):
                     email = email,
                     user=user
                     )
+                return redirect('login')
             else:
                 context['error'] = 'Паролі не співпадають'
 
